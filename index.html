@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cleric of the Campaign</title>
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Special+Elite&display=swap" rel="stylesheet">
+<link href="main.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="introScreen">
+    <div id="introBook">
+        <img src="assets/adtechgod.png" style="width:150px;height:auto"/>
+        <h1>The Great Exchange</h1>
+
+        <p>
+        Welcome to the magical world of <b>The Great Exchange</b>; you have been selected as 
+        <span class="tooltip">Clerics
+            <span class="tooltipText">Clerics are intermediaries between the mortal world and the distant planes of the gods. As varied as the gods they serve, clerics strive to embody the handiwork of their deities. No ordinary priest, a cleric is imbued with divine magic.</span>
+        </span>
+        (against your will!) to serve the almighty AdTechGod.
+        </p>
+
+        <p>
+        The Exchangers have been facing a torrential 
+        <span class="tooltip">The Blind-Auction Blight
+            <span class="tooltipText">The Bot King's spectral hordes conjure The Blind-Auction Blight, a chaotic mist that forces the realm to cast gold into campaigns without strategy, severing the silver cords of attribution so no one can discern which bid truly won an Exchanger's devotion to the AdTechGod.</span>
+        </span>
+        under the tyrannical Bot King and his ruthless Bots.
+        </p>
+
+        <p>
+        You are to serve the AdTechGod, imbued by their magic to serve the purpose of identifying the Channels and Creative Messages that inspire Exchangers to determine their final destination: The Conversion.
+        </p>
+
+        <button id="startGame">✦ Begin Your Campaign ✦</button>
+    </div>
+</div>
+
+<div id="campaignContainer">
+    <div id="introBook">
+        <h1>&nbsp;&nbsp;Campaign Management</h1>
+        <div class="cleric-row">
+            <p>
+                Clerics guide the Ad Creative Banner by pacing the flow of gold through the Bot King's winds. 
+                This ensures tributes are never wasted and reach the Exchangers at the perfect moment.
+            </p>
+        </div>
+        <div class="cleric animate"></div>
+        <button id="startCampaign" style="margin-right:14em">💫 Start</button>
+    </div>
+</div>
+
+<div id="attributionContainer">
+    <div id="introBook">
+        <h1>&nbsp;&nbsp;Attribution & Modeling</h1>
+        <div class="cleric-row">
+            <p>
+                The Rite of Attribution reveals which magical touchpoints truly guided an Exchanger's journey.
+                By invoking these rites, Clerics pinpoint which strategies converted an Exchanger to a devoted follower.
+            </p>
+        </div>
+        <div class="cleric animate"></div>
+        <button id="startAttribution" style="margin-right:14em">🔮 Start</button>
+    </div>
+</div>
+
+<div id="winContainer">
+    <div id="introBook">
+        <h1>Thank You!</h1>
+        <img src="assets/adtechgod.png" style="width:150px;height:auto"/>
+        <p>Historically, unfaithful Clerics paid no mind to the corruption of their banners so long as they received the Bot King's tainted gold.</p>
+        <p>However, faithful Clerics understand that mastering the flow of souls and the Rite of Attribution ensures the Great Houses return to offer their tributes. These Clerics watch over the entire life cycle of the Ad Creative Banner, bridging the gap between the Domain-Keepers and the AdTechGod.</p>
+        <p>Through their devotion, Good Freestarian Clerics purify the essence of these realms and the density of their banners, ensuring that seekers from afar are drawn back to their light once more.</p>
+    </div>
+</div>
+
+<div id="loseContainer">
+  <div id="introBook">
+    <h1>Better Luck Next Time...</h1>
+    <div id="cleric" class="cleric fail" style="display:block"></div>
+    <p>☠️ The campaigns fall into chaos.</p>
+    <p>The Exchanger fades into darkness.</p>
+  </div>
+</div>
+
+<!-- Game Container -->
+<div id="gameContainer">
+    <div id="spellbook">
+        <div id="leftPage" class="page">
+            <h1>Campaign Log</h1>
+            <div id="story"></div>
+            <div id="boss"></div>
+            <div id="stats"></div>
+        </div>
+        <div id="rightPage" class="page">
+            <h1>Spellbook</h1>
+            <div id="choices"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Audio -->
+<audio id="bgMusic" loop>
+  <source src="assets/sounds/medieval_theme.mp3" type="audio/mp3">
+</audio>
+
+<audio id="spellSound">
+  <source src="assets/sounds/spell_cast.mp3" type="audio/mp3">
+</audio>
+
+<audio id="tip">
+  <source src="assets/sounds/tip.mp3" type="audio/mp3">
+</audio>
+
+<audio id="pass">
+  <source src="assets/sounds/pass.mp3" type="audio/mp3">
+</audio>
+
+<audio id="fail">
+  <source src="assets/sounds/fail.mp3" type="audio/mp3">
+</audio>
+
+<audio id="levelup">
+  <source src="assets/sounds/levelup.mp3" type="audio/mp3">
+</audio>
+
+<audio id="celebrate">
+  <source src="assets/sounds/celebrate.mp3" type="audio/mp3">
+</audio>
+
+<audio id="devourer-intro">
+  <source src="assets/bosses/devourer/intro.mp3" type="audio/mp3">
+</audio>
+<audio id="devourer-attack">
+  <source src="assets/bosses/devourer/attack.mp3" type="audio/mp3">
+</audio>
+<audio id="devourer-hit">
+  <source src="assets/bosses/devourer/hit.mp3" type="audio/mp3">
+</audio>
+<audio id="devourer-dead">
+  <source src="assets/bosses/devourer/dead.mp3" type="audio/mp3">
+</audio>
+
+<audio id="botking-intro">
+  <source src="assets/bosses/botking/intro.mp3" type="audio/mp3">
+</audio>
+<audio id="botking-attack">
+  <source src="assets/bosses/botking/attack.mp3" type="audio/mp3">
+</audio>
+<audio id="botking-hit">
+  <source src="assets/bosses/botking/hit.mp3" type="audio/mp3">
+</audio>
+<audio id="botking-dead">
+  <source src="assets/bosses/botking/dead.mp3" type="audio/mp3">
+</audio>
+
+<script type="text/javascript" src="main.min.js"></script>
+</body>
+</html>
